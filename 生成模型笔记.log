@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2022.9.12)  24 OCT 2022 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2022.9.12)  24 OCT 2022 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,12 +1242,10 @@ File: ts1txr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <17.28> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 31.
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 32.
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 33.
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 37.
+quanjiao) on input line 32.
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 36.
 
 (d:/Program Files/texlive/2020/texmf-dist/tex/generic/ctex/zhwindowsfonts.tex
 File: zhwindowsfonts.tex 2019/05/29 v2.4.16 Windows font map loader for pdfTeX 
@@ -1256,44 +1254,35 @@ and DVIPDFMx (CTEX)
 [1
 
 ]
-Overfull \hbox (1.3178pt too wide) in paragraph at lines 65--68
-\C70/rm/m/n/12/57 ( \C70/rm/m/n/12/53 Õ \C70/rm/m/n/12/54 ^^Q\OT1/txr/m/n/12 KL
-\C70/rm/m/n/12/4e -|\C70/rm/m/n/12/ff ^^L| \C70/rm/m/n/12/5d Ó \C70/rm/m/n/12/5
-f ^^B \C70/rm/m/n/12/52 † \C70/rm/m/n/12/67 C \C70/rm/m/n/12/6c B \C70/rm/m/n/1
-2/54 å \C70/rm/m/n/12/65 ˆ \C70/rm/m/n/12/76 Ñ \C70/rm/m/n/12/67 C \C70/rm/m/n/
-12/91 Õ \C70/rm/m/n/12/7c ˚ \C70/rm/m/n/12/65 p \C70/rm/m/n/12/66 / $\OML/txmi/
-m/it/12 q []$|\C70/rm/m/n/12/30 ^^B| \C70/rm/m/n/12/6b d \C70/rm/m/n/12/65 ˆ|\C
-70/rm/m/n/12/ff ^^L|  $\OML/txmi/m/it/12 p []$ \C70/rm/m/n/12/57 ( \C70/rm/m/n/
-12/5b P \C70/rm/m/n/12/96 ∆ $\OML/txmi/m/it/12 X[] \OT1/txr/m/n/12 = []$
- []
-
-<./figure/1.png, id=194, 382.3083pt x 260.172pt>
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 59.
+<./figure/1.png, id=190, 382.3083pt x 260.172pt>
 File: ./figure/1.png Graphic file (type png)
 <use ./figure/1.png>
-Package pdftex.def Info: ./figure/1.png  used on input line 69.
+Package pdftex.def Info: ./figure/1.png  used on input line 66.
 (pdftex.def)             Requested size: 229.38673pt x 156.10439pt.
-<./figure/2.png, id=196, 382.3083pt x 260.172pt>
+<./figure/2.png, id=192, 382.3083pt x 260.172pt>
 File: ./figure/2.png Graphic file (type png)
 <use ./figure/2.png>
-Package pdftex.def Info: ./figure/2.png  used on input line 69.
+Package pdftex.def Info: ./figure/2.png  used on input line 66.
 (pdftex.def)             Requested size: 229.38673pt x 156.10439pt.
-<./figure/3.png, id=197, 988.69376pt x 853.1875pt>
+<./figure/3.png, id=193, 988.69376pt x 853.1875pt>
 File: ./figure/3.png Graphic file (type png)
 <use ./figure/3.png>
-Package pdftex.def Info: ./figure/3.png  used on input line 75.
+Package pdftex.def Info: ./figure/3.png  used on input line 70.
 (pdftex.def)             Requested size: 355.92949pt x 307.14726pt.
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-<./figure/4.png, id=224, 670.00313pt x 486.81876pt>
+<./figure/4.png, id=225, 670.00313pt x 486.81876pt>
 File: ./figure/4.png Graphic file (type png)
 <use ./figure/4.png>
-Package pdftex.def Info: ./figure/4.png  used on input line 79.
+Package pdftex.def Info: ./figure/4.png  used on input line 74.
 (pdftex.def)             Requested size: 335.00075pt x 243.40878pt.
 [3 <./figure/1.png> <./figure/2.png> <./figure/3.png>]
-Overfull \hbox (8.53098pt too wide) in paragraph at lines 82--85
+Overfull \hbox (8.53098pt too wide) in paragraph at lines 77--80
 []\C70/rm/m/n/12/73 ∞ \C70/rm/m/n/12/57 ( \C70/rm/m/n/12/51 ç \C70/rm/m/n/12/67
  e \C70/rm/m/n/12/5c ^^] \C70/rm/m/n/12/8b ’ \C70/rm/m/n/12/63 ® \C70/rm/m/n/12
 /5b ¸ \C70/rm/m/n/12/51 ˙ \C70/rm/m/n/12/7f Q \C70/rm/m/n/12/7e ‹ \C70/rm/m/n/1
@@ -1307,86 +1296,89 @@ mi/m/it/12 p []$|\C70/rm/m/n/12/ff ^^L|
  []
 
 [4 <./figure/4.png>] [5]
-<./figure/5.png, id=257, 756.57657pt x 125.71968pt>
+<./figure/5.png, id=258, 756.57657pt x 125.71968pt>
 File: ./figure/5.png Graphic file (type png)
 <use ./figure/5.png>
-Package pdftex.def Info: ./figure/5.png  used on input line 116.
+Package pdftex.def Info: ./figure/5.png  used on input line 111.
 (pdftex.def)             Requested size: 453.94945pt x 75.43237pt.
-<./figure/6.png, id=259, 708.14563pt x 113.42375pt>
+<./figure/6.png, id=260, 708.14563pt x 113.42375pt>
 File: ./figure/6.png Graphic file (type png)
 <use ./figure/6.png>
-Package pdftex.def Info: ./figure/6.png  used on input line 121.
+Package pdftex.def Info: ./figure/6.png  used on input line 116.
 (pdftex.def)             Requested size: 424.89066pt x 68.05476pt.
  [6 <./figure/5.png> <./figure/6.png>] [7] [8]
-Overfull \hbox (0.63275pt too wide) detected at line 192
+Overfull \hbox (0.63275pt too wide) detected at line 187
 [][]
  []
 
-[9] [10] [11] [12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
+[9] [10] [11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 235.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
  (./ÁîüÊàêÊ®°ÂûãÁ¨îËÆ∞.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
 Package rerunfilecheck Info: File `ÁîüÊàêÊ®°ÂûãÁ¨îËÆ∞.out' has not changed.
-(rerunfilecheck)             Checksum: 286F00F274010F609350B3D958A6A13C;1490.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
+(rerunfilecheck)             Checksum: 28C769F9894B6D84F4119C2AD3AD6602;1576.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 235.
  ) 
 Here is how much of TeX's memory you used:
- 27394 strings out of 480608
- 489121 string characters out of 5900632
+ 27430 strings out of 480608
+ 489679 string characters out of 5900632
  707445 words of memory out of 5000000
- 42415 multiletter control sequences out of 15000+600000
- 614511 words of font info for 276 fonts, out of 8000000 for 9000
+ 42439 multiletter control sequences out of 15000+600000
+ 616941 words of font info for 285 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 52i,18n,68p,1133b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 52i,18n,68p,1335b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/s
 imsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows
 /Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:
-/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
+/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun
 .ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Font
 s/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Wind
-ows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>
-<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/sim
-sun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/F
+ows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf>
+<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/sim
+hei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/F
 onts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/W
-indows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.t
-tf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/
-simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
-s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
+indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
+tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/
+simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
+s/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c
+:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
 n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
 ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Win
 dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
 ><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
 msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
-Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc>{d:/Program Files/texlive/2020/te
-xmf-dist/fonts/enc/dvips/base/8r.enc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/F
-onts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/W
-indows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.t
-tc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
+Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
+Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
+/simsun.ttc>{d:/Program Files/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}<c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/
 simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Window
 s/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c
-:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhe
-i.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fon
-ts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Win
-dows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc
-><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/si
-msun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/
-Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/
-Program Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><d:/P
-rogram Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><d:/P
-rogram Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><d:/Pr
-ogram Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txex.pfb><d:/Pro
-gram Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><d:/Prog
-ram Files/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb><d:/Prog
-ram Files/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><d:/Program 
-Files/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><d:/Program File
-s/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ÁîüÊàêÊ®°ÂûãÁ¨îËÆ∞.pdf (13 pages, 1356554 bytes).
+:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsu
+n.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fon
+ts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simhei.ttf><c:/Win
+dows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf
+><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/si
+mhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simsun.ttc><c:/Windows/
+Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/
+Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.
+ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts/simsun.ttc><c:/Windows/Fonts
+/simsun.ttc><c:/Windows/Fonts/simsun.ttc><d:/Program Files/texlive/2020/texmf-d
+ist/fonts/type1/public/txfonts/rtxb.pfb><d:/Program Files/texlive/2020/texmf-di
+st/fonts/type1/public/txfonts/rtxmi.pfb><d:/Program Files/texlive/2020/texmf-di
+st/fonts/type1/public/txfonts/rtxr.pfb><d:/Program Files/texlive/2020/texmf-dis
+t/fonts/type1/public/txfonts/txex.pfb><d:/Program Files/texlive/2020/texmf-dist
+/fonts/type1/public/txfonts/txsy.pfb><d:/Program Files/texlive/2020/texmf-dist/
+fonts/type1/public/txfonts/txsyc.pfb><d:/Program Files/texlive/2020/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb><d:/Program Files/texlive/2020/texmf-dist/font
+s/type1/urw/times/utmr8a.pfb><d:/Program Files/texlive/2020/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on ÁîüÊàêÊ®°ÂûãÁ¨îËÆ∞.pdf (12 pages, 1369847 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 437 compressed objects within 5 object streams
- 43 named destinations out of 1000 (max. 500000)
- 419 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 411 words of extra memory for PDF output out of 10000 (max. 10000000)
 

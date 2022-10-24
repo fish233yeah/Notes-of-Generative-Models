@@ -28,13 +28,12 @@
 \setlength{\parindent}{2em}   %设置首行缩进为2字符
 
 
-\section{概率生成模型}
-\subsection{概率生成模型基本思想}
+\section{概率生成模型基本思想}
 \indent 我们可以将我们的训练集看作是对某个高维空间$\Omega$中的一个随机向量$X$进行多次采样得到的结果，这个随机向量服从一个未知的概率分布$P_r$。那么我们可以通过$X$的样本集（即训练集）来学习获得一个参数化模型$P_\theta$，此时学习获得的模型$P_\theta$应当与$P_r$是近似的，之后通过学习到的模型$P_\theta$再进行采样，则就能获得与训练集近似分布的生成结果，这便是生成网络的基本思想。\\
 \indent 然而在实际操作中，由于待拟合的概率分布$p_r$往往非常复杂，神经网络通常很难直接拟合，且另一方面生成的结果很难量化评估其好坏，因此并不能简单地去构造一个生成网络来解决问题。
 
-\subsection{交叉熵}
-\subsubsection{定义}
+\section{交叉熵}
+\subsection{定义}
 \indent 对于分布为 $p\left(X\right)$ 的随机变量 $X$，我们用概率分布为 $q$ 的编码对真实分布为 $p$ 的信息 $X$ 进行编码的长度我们就称为交叉熵，其表达式为
 \[H\left(p,q\right)=E_{x\sim p\left(X\right)}\left[-\log q\left(X\right)\right]=\left\{
 \begin{matrix}
@@ -44,8 +43,8 @@
 \right.\]
 在给定 $p$ 的情况下，$q$ 和 $p$ 越接近，则交叉熵越小；反之则越大。
 
-\subsection{KL散度}
-\subsubsection{定义}
+\section{KL散度}
+\subsection{定义}
 \indent KL散度（Kullback-Leibler Divergence）在概率模型中一般用于度量两个概率密度函数之间的“距离”，其定义为
 \[KL\left[p\left(X\right)||q\left(X\right)\right]=E_{x\sim p\left(X\right)}\left[\log\left(\frac{p\left(X\right)}{q\left(X\right)}\right)\right]=\left\{
 \begin{matrix}
@@ -56,21 +55,17 @@
 可以证明KL散度必然大于等于0。注意到KL散度的定义中 $KL\left[p\left(X\right)||q\left(X\right)\right]$ 关于 $p\left(X\right)$、 $q\left(X\right)$ 并不对称，即 $KL\left[p\left(X\right)||q\left(X\right)\right]\neq KL\left[q\left(X\right)||p\left(X\right)\right]$，因此KL散度不满足对称性，显然不是数学意义上的“度量”。\\
 \indent 在优化问题中，常用 $p\left(X\right)$ 表示真实分布， $q\left(X\right)$ 表示一个用于拟合 $p\left(X\right)$ 的近似分布，在这种情形下，通常称 $KL\left[p\left(X\right)||q\left(X\right)\right]$ 为前向KL散度（forward Kullback-Leibler Divergence），而称 $KL\left[q\left(X\right)||p\left(X\right)\right]$ 为反向KL散度（reverse Kullback-Leibler Divergence）。
 
-\subsubsection{两类KL散度拟合效果定性分析}
-\begin{enumerate}
-\item 极小化前向KL散度代价下的拟合行为特性：寻找均值\\
-前向KL的计算式中， $p\left(X\right)$ 和 $q\left(X\right)$ 在每个样本点 $x$ 上的差异程度被 $p\left(X\right)$ 加权平均，我们基于此对前向KL的特性进行分析。\\
-考虑随机变量 $X$ 的子集 $X_0=\left\{x|p\left(x\right)=0\right\}$，由于 $p\left(X\right)$ 是前向KL公式中的权重系数，因此 $X_0$ 中的元素实际上对前向KL的值没有任何影响。换言之，对任意 $x\in X_0$，无论 $p\left(X_0\right)$ 与 $q\left(X_0\right)$ 相差多大都对前向KL的计算结果毫无影响，因此前向KL值不受 $q\left(X\right)$ 在子集 $X_0=\left\{x|p\left(x\right)=0\right\}$ 上取值的影响。在极小化前向KL散度的过程中，每当 $p\left(X\right)=0$ 时， $q\left(X\right)$ 就会被无视。从连续性角度推理，最小化前向KL散度倾向于忽视“ $q\left(X\right)$ 在满足 $p\left(X\right)$ 近似为0的随机变量取值集合上的拟合精度”，而去更努力的实现“ $q\left(X\right)$ 在满足 $p\left(X\right)>0$ 的随机变量取值集合上的拟合精度”。最小化前向KL散度代价在等价于对 $q\left(X\right)$ 中的参数 $\theta$ 的极大似然估计\\
-\indent 前向KL散度的这种特性一般也被称为zero avoiding，原因是它倾向于避免在任何 $p\left(X\right)>0$ 的位置 $x$ 使得 $q\left(X\right)=0$。图\ref{kl_img}左展示了使用前向KL散度代价拟合一个多峰（实际上是双峰）分布的效果示意图
-\item 极小化反向KL散度代价下的拟合行为特性：搜寻模态\\
-在反向KL中，差异加权求和时的权重系数是 $q\left(X\right)$。此时， $p\left(X\right)$ 在子集 $X_0=\left\{x|q\left(x\right)=0\right\}$ 的取值不影响反向KL值的计算，而当 $q\left(X\right)>0$ 时， $q\left(X\right)$ 与 $p\left(X\right)$ 的差异需要尽可能小以使得反向KL值尽可能小。因此，在以反向KL散度为代价的优化过程中， $q\left(X\right)$ 会更加趋向于要么取值接近0，要么去尽可能贴合 $p\left(X\right)$，表现即为 $q\left(X\right)$ 在拟合 $p\left(X\right)$ 时尽可能保持单一模态。\\
-图\ref{kl_img}右展示了使用反向KL散度代价拟合一个多峰（实际上是双峰）分布的效果示意图
+\subsection{两类KL散度拟合效果定性分析}
+\subsubsection{极小化前向KL散度代价下的拟合行为特性：寻找均值}
+\indent 前向KL的计算式中， $p\left(X\right)$ 和 $q\left(X\right)$ 在每个样本点 $x$ 上的差异程度被 $p\left(X\right)$ 加权平均，我们基于此对前向KL的特性进行分析。\\
+\indent 考虑随机变量 $X$ 的子集 $X_0=\left\{x|p\left(x\right)=0\right\}$，由于 $p\left(X\right)$ 是前向KL公式中的权重系数，因此 $X_0$ 中的元素实际上对前向KL的值没有任何影响。换言之，对任意 $x\in X_0$，无论 $p\left(X_0\right)$ 与 $q\left(X_0\right)$ 相差多大都对前向KL的计算结果毫无影响，因此前向KL值不受 $q\left(X\right)$ 在子集 $X_0=\left\{x|p\left(x\right)=0\right\}$ 上取值的影响。在极小化前向KL散度的过程中，每当 $p\left(X\right)=0$ 时， $q\left(X\right)$ 就会被无视。从连续性角度推理，最小化前向KL散度倾向于忽视“ $q\left(X\right)$ 在满足 $p\left(X\right)$ 近似为0的随机变量取值集合上的拟合精度”，而去更努力的实现“ $q\left(X\right)$ 在满足 $p\left(X\right)>0$ 的随机变量取值集合上的拟合精度”。前向KL散度的这种特性一般也被称为zero avoiding，原因是它倾向于避免在任何 $p\left(X\right)>0$ 的位置 $x$ 使得 $q\left(X\right)=0$。最小化前向KL散度代价等价于对 $q\left(X\right)$ 中的参数 $\theta$ 的极大似然估计。图\ref{kl_img}左展示了使用前向KL散度代价拟合一个多峰（实际上是双峰）分布的效果示意图
+\subsubsection{极小化反向KL散度代价下的拟合行为特性：搜寻模态}
+\indent 在反向KL中，差异加权求和时的权重系数是 $q\left(X\right)$。此时， $p\left(X\right)$ 在子集 $X_0=\left\{x|q\left(x\right)=0\right\}$ 的取值不影响反向KL值的计算，而当 $q\left(X\right)>0$ 时， $q\left(X\right)$ 与 $p\left(X\right)$ 的差异需要尽可能小以使得反向KL值尽可能小。因此，在以反向KL散度为代价的优化过程中， $q\left(X\right)$ 会更加趋向于要么取值接近0，要么去尽可能贴合 $p\left(X\right)$，表现即为 $q\left(X\right)$ 在拟合 $p\left(X\right)$ 时尽可能保持单一模态。\\
+\indent 图\ref{kl_img}右展示了使用反向KL散度代价拟合一个多峰（实际上是双峰）分布的效果示意图
 
 \begin{figure}[htb]\centering\includegraphics[scale=0.6]{./figure/1.png}\includegraphics[scale=0.6]{./figure/2.png}\caption{左：前向KL代价拟合；右：反向KL代价拟合}\label{kl_img}\end{figure}
 
-\end{enumerate}
-
-\subsection{VAE (Variational Autoencoders)}
+\section{VAE (Variational Autoencoders)}
 
 \begin{figure}[htb]\centering\includegraphics[scale=0.36]{./figure/3.png}\caption{VAE网络结构}\label{vae_img}\end{figure}
 
@@ -115,7 +110,7 @@ L_b&=\int_zq\left(z|x\right)\log\left(\frac{p\left(x|z\right)p\left(z\right)}{q\
 
 \begin{figure}[htb]\centering\includegraphics[scale=0.6]{./figure/5.png}\caption{VAE算法结构}\label{vae2_img}\end{figure}
 
-\subsection{DDPM (Denoising Diffusion Probabilistic Models)}
+\section{DDPM (Denoising Diffusion Probabilistic Models)}
 \indent 概率扩散模型的原理与VAE在某些地方有些相似。在DDPM中，我们将通过多次高斯扩散过程 $q\left(x_t|x_{t-1}\right)$ 逐渐将源输入 $X_0$ 转变为随机噪声 $X_T$，再从随机噪声 $X_T$ 学习获得逆扩散过程 $p_\theta\left(x_{t-1}|x_t\right)$ 还原源输入 $X_0$。通过对扩散过程进行学习得到一系列马尔可夫逆扩散过程 $p_\theta\left(x_{t-1}|x_t\right)$ 后，我们便获得了从随机噪声到目标数据的条件分布 $\prod\limits_{t=1}^{T}p_\theta\left(x_{t-1}|x_t\right)$，如图\ref{ddpm_img}所示
 
 \begin{figure}[htb]\centering\includegraphics[scale=0.6]{./figure/6.png}\caption{DDPM算法结构}\label{ddpm_img}\end{figure}
@@ -225,9 +220,6 @@ L_{t-1}&=E_{x_{0:T}\sim q\left(X_{0:T}\right)}\left[\log\left(\frac{q\left(X_{t-
 \[p_{\theta}\left(X_T\right)=N\left(X_T;0,1\right)\qquad p_{\theta}\left(X_{t-1}|X_t\right)=N\left(X_{t-1};\mu_{\theta}\left(X_t,t\right),\Sigma_{\theta}\left(X_t,t\right)\right)\]
 来对生成过程进行拟合。至此，网络结构设计和损失函数设计均推导完毕。
 
-
-\section{分数生成模型}
-\subsection{分数生成模型基本思想}
 
 
 
