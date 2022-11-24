@@ -73,7 +73,7 @@
 
 \begin{figure}[htb]\centering\includegraphics[scale=0.5]{./figure/4.png}\caption{$Z$各点生成高斯分布叠加拟合$P\left(X\right)$}\label{dmm_img}\end{figure}
 
-\indent 首先考虑以下网络的decoder，即生成部分。如图\ref{dmm_img}所示，由于目标概率密度函数 $p_r\left(X\right)$ 通常并不是一个上凸函数，它通常会具有多个极值，所以我们可以考虑使用多个高斯分布相叠加去拟合概率密度函数 $p_r\left(X\right)$，这个思想就是高斯混合模型的思想。我们将隐变量 $Z$ 看作一个随机变量，我们对隐变量 $Z$ 的每个可能的取值，都将其放入一个映射来得到一个均值 $\mu\left(z\right)$ 和一个标准差 $\sigma\left(z\right)$，此时我们便可以从这个隐变量的每个取值分别获得一个高斯分布 $N\left(\mu\left(z\right),\sigma^2\left(z\right)\right)$。因此，如果我们假设 $Z$ 服从某个概率分布，那么对于概率密度函数 $p\left(X\right)$，我们有
+\indent 首先考虑网络的decoder，即生成部分。如图\ref{dmm_img}所示，由于目标概率密度函数 $p_r\left(X\right)$ 通常并不是一个上凸函数，它通常会具有多个极值，所以我们可以考虑使用多个高斯分布相叠加去拟合概率密度函数 $p_r\left(X\right)$，这个思想就是高斯混合模型的思想。我们将隐变量 $Z$ 看作一个随机变量，我们对隐变量 $Z$ 的每个可能的取值，都将其放入一个映射来得到一个均值 $\mu\left(z\right)$ 和一个标准差 $\sigma\left(z\right)$，此时我们便可以从这个隐变量的每个取值分别获得一个高斯分布 $N\left(\mu\left(z\right),\sigma^2\left(z\right)\right)$。因此，如果我们假设 $Z$ 服从某个概率分布，那么对于概率密度函数 $p\left(X\right)$，我们有
 \[p\left(x\right)=\int_zp\left(z\right)p\left(x|z\right)dz\]
 其中 $p\left(X|Z\right)$ 服从高斯分布 $X|Z\sim N\left(\mu\left(Z\right),\sigma^2\left(Z\right)\right)$，这个 $p\left(X|Z\right)$ 便是 $z\to x$ 的结构，即VAE中的decoder结构。如果我们将 $Z$ 的概率分布确定下来为某个已知分布，那么概率密度函数 $p\left(X\right)$ 就仅与映射 $\mu$ 和 $\sigma$ 相关了。在VAE中我们假设 $Z$ 的概率分布为 $Z\sim N\left(0,1\right)$。\\
 \indent 现在再来尝试推导出网络的encoder结构。由于我们的目标是在训练集上最大化 $\sum\limits_x\log p\left(x\right)$，我们假设 $Z|X$ 上有一个任意的概率密度函数 $q\left(Z|X\right)$，对 $\log p\left(X\right)$ 做变换我们有：
@@ -87,7 +87,7 @@
 \end{aligned}\]
 我们记 $L_b=\int_zq\left(z|x\right)\log\left(\frac{p\left(x|z\right)p\left(z\right)}{q\left(z|x\right)}\right)dz$，则我们便得到了如下式子
 \[\log p\left(x\right)=L_b+KL\left[q\left(z|x\right)||p\left(z|x\right)\right]\geq L_b\]
-此时很直观地，我们似乎只要调整 $p\left(x|z\right)$ 和 $q\left(z|x\right)$ 来将 $L_b$ 最大化即可将 $log p\left(x\right)$ 最大化了，但由于 $p\left(z|x\right)$ 与 $p\left(x|z\right)$ 相关联，在调整 $p\left(x|z\right)$ 的时候可能会导致 $KL\left[q\left(z|x\right)||p\left(z|x\right)\right]$ 下降从而导致 $log p\left(x\right)$ 反而下降，而由于 $q\left(z|x\right)$ 为任意概率密度函数，它变化时并不会导致 $p$ 变化，因此我们考虑先把 $p\left(x|z\right)$ 固定（此时 $\log p\left(x\right)=\log\left(\int_zp\left(z\right)p\left(x|z\right)dz\right)$ 也会固定），仅调整 $q\left(z|x\right)$。显然，当 $q\left(z|x\right)$ 逼近 $p\left(z|x\right)$ 时， $KL\left[q\left(z|x\right)||p\left(z|x\right)\right]$ 会趋近于0，此时 $\log p\left(x\right)$ 会趋近于 $L_b$，因此，在将 $q\left(z|x\right)$ 逼近 $p\left(z|x\right)$ 的情况下再通过调整 $p\left(z|x\right)$ 来增大 $L_b$ 时， $\log p\left(x\right)$ 也会随之增大。而对于 $L_b$，我们有
+此时很直观地，我们似乎只要调整 $p\left(x|z\right)$ 和 $q\left(z|x\right)$ 来将 $L_b$ 最大化即可将 $\log p\left(x\right)$ 最大化了，但由于 $p\left(z|x\right)$ 与 $p\left(x|z\right)$ 相关联，在调整 $p\left(x|z\right)$ 的时候可能会导致 $KL\left[q\left(z|x\right)||p\left(z|x\right)\right]$ 下降从而导致 $\log p\left(x\right)$ 反而下降，而由于 $q\left(z|x\right)$ 为任意概率密度函数，它变化时并不会导致 $p$ 变化，因此我们考虑先把 $p\left(x|z\right)$ 固定（此时 $\log p\left(x\right)=\log\left(\int_zp\left(z\right)p\left(x|z\right)dz\right)$ 也会固定），仅调整 $q\left(z|x\right)$。显然，当 $q\left(z|x\right)$ 逼近 $p\left(z|x\right)$ 时， $KL\left[q\left(z|x\right)||p\left(z|x\right)\right]$ 会趋近于0，此时 $\log p\left(x\right)$ 会趋近于 $L_b$，因此，在将 $q\left(z|x\right)$ 逼近 $p\left(z|x\right)$ 的情况下再通过调整 $p\left(z|x\right)$ 来增大 $L_b$ 时， $\log p\left(x\right)$ 也会随之增大。而对于 $L_b$，我们有
 \[\begin{aligned}
 L_b&=\int_zq\left(z|x\right)\log\left(\frac{p\left(x|z\right)p\left(z\right)}{q\left(z|x\right)}\right)dz\\
 &=\int_zq\left(z|x\right)\log p\left(x|z\right)dz+\int_zq\left(z|x\right)\log\left(\frac{p\left(z\right)}{q\left(z|x\right)}\right)dz\\
